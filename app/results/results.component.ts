@@ -45,8 +45,13 @@ export class ResultsComponent implements OnInit {
     this.xronia = value;
     if (this.xronia)this.makeUrl()
     this.callRaces(this.wholeUrl);
-
+    this.clearData();
   }
+  clearData(){
+    this.names.length=0;
+    this.dates.length=0;
+
+ }
   //creating url using the year
   makeUrl(){
     this.wholeUrl=this.newUrl + this.xronia + this.endUrl;
