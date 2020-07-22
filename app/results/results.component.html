@@ -1,0 +1,23 @@
+<h1>seasons</h1>
+
+<!-- populating the dropdownlist with data from the f1 seasons-->  
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label for="itemz">Select Year</label>
+  <tr (click)="onRowClick(myDropDownList.value)">
+  <select #myDropDownList class="form=control select" formControlName="items" id="items">
+      <option *ngFor="let item of items;let i =index" [value]="items[i].season">
+        {{ items[i].season }}
+      </option>
+
+
+  </select>
+  </tr>
+
+</form>
+
+<!-- populating our list list with data from the f1 circuits-->  
+<ul *ngIf="names && dates">
+  <li *ngFor="let pos of names;let i =index">
+          <pre>{{pos}}{{dates[i]}}</pre>
+  </li>
+</ul>
